@@ -17,7 +17,7 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
+export EDITOR='vim'
 export VISUAL='nano'
 export PAGER='less'
 
@@ -26,7 +26,7 @@ export PAGER='less'
 #
 
 if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
+  export LANG='en_GB.UTF-8'
 fi
 
 #
@@ -61,3 +61,8 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+alias rdp-work='rdesktop -k gb localhost:3389 -f -d INCONY2 -u lukast -p -'
+alias execPostgres='sudo -u postgres'
+export GOPATH=$HOME/go
+export PATH=$GOPATH:$GOPATH/bin:/usr/local/go/bin:$HOME/.cargo/bin:/opt/JetBrains/android-studio/bin:$PATH
